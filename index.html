@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR.js Example</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
-</head>
-<body>
-    <a-scene embedded arjs="sourceType: webcam;">
-        <a-entity gps-camera rotation-reader></a-entity>
-        <a-entity gltf-model="Cesium_Man.glb" position="0 0 -5" scale="0.1 0.1 0.1"></a-entity>
-    </a-scene>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webxr Ar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <script type="module" src="/cube/normal-cube.js"></script> -->
+    <!-- <script type="module" src="/cube/xr-cube.js"></script> -->
+    <!-- <script type="module" src="/cube/xr-hit-cube.js"></script> -->
+    <!-- <script type="module" src="/model/xr-hit-models.js"></script> -->
+    <script type="module" src="/model/xr-domOverlay.js"></script>
+
+    <div id="overlay-content">
+      <div id="container">
+        <label for="model-select">Choose Model</label>
+        <select id="model-select">
+          <option value="chair">Chair</option>
+          <option value="bookcase">Bookcase</option>
+        </select>
+      </div>
+    </div>
+    <!-- Comment style display none for dom overlay to work in style.css file -->
+  </body>
 </html>
