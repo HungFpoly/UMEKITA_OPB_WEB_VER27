@@ -34,7 +34,32 @@
             gesture-handler
         ></a-entity>
 
-        <a-entity camera></a-entity>
+        <a-entity camera
+            id="camera-entity"
+            cursor="fuse: false; rayOrigin: mouse;"
+            raycaster="objects: .ground"
+        ></a-entity>
+
+        <!-- Ground Plane -->
+        <a-plane
+            class="ground"
+            position="0 0 0"
+            rotation="-90 0 0"
+            width="20"
+            height="20"
+            color="#7BC8A4"
+        ></a-plane>
+
+        <script>
+            document.querySelector("#camera-entity").addEventListener("click", function (event) {
+                const intersection = event.detail.intersectedEl;
+                if (intersection && intersection.object3D) {
+                    const position = intersection.object3D.position;
+                    const bowserModel = document.querySelector("#bowser-model");
+                    bowserModel.setAttribute("position", position);
+                }
+            });
+        </script>
     </a-scene>
 </body>
 </html>
