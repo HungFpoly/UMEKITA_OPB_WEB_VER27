@@ -27,7 +27,7 @@
 
         <a-entity
             id="bowser-model"
-            scale="0.002078034258399037 0.002078034258399037 0.002078034258399037"
+            scale="0 0 0" <!-- Initial scale is set to 0 -->
             animation-mixer="loop: repeat"
             gltf-model="#animated-asset"
             class="clickable"
@@ -51,13 +51,29 @@
         ></a-plane>
 
         <script>
+            const bowserModel = document.querySelector("#bowser-model");
+
             document.querySelector("#camera-entity").addEventListener("click", function (event) {
                 const intersection = event.detail.intersectedEl;
                 if (intersection && intersection.object3D) {
                     const position = intersection.object3D.position;
-                    const bowserModel = document.querySelector("#bowser-model");
                     bowserModel.setAttribute("position", position);
+
+                    // Set scale to 1 to make the model visible
+                    bowserModel.setAttribute("scale", "1 1 1");
                 }
+            });
+
+            document.querySelector("#camera-entity").addEventListener("wheel", function (event) {
+                // Zoom in/out when using the mouse wheel
+                const currentScale = bowserModel.getAttribute("scale");
+                const scaleMultiplier = event.deltaY > 0 ? 0.9 : 1.1; // Adjust as needed
+                const newScale = {
+                    x: currentScale.x * scaleMultiplier,
+                    y: currentScale.y * scaleMultiplier,
+                    z: currentScale.z * scaleMultiplier,
+                };
+                bowserModel.setAttribute("scale", newScale);
             });
         </script>
     </a-scene>
