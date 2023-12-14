@@ -21,11 +21,7 @@
             <a-assets>
                 <a-asset-item
                     id="animated-asset"
-                    src="assets/bird_orange.glb"
-                ></a-asset-item>
-                <a-asset-item
-                    id="animated-asset-2"
-                    src="assets/phoenix_bird.glb"
+                    src="assets/asset.glb"
                 ></a-asset-item>
             </a-assets>
 
@@ -39,40 +35,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-            <a-entity
-                id="bowser-model"
-                scale="0.23778764027361926 0.23778764027361926 0.23778764027361926"
-                animation-mixer="loop: repeat"
-                gltf-model="#animated-asset"
-                class="clickable"
-                gesture-handler
-            ></a-entity>
-            <!-- Marker và Model Thứ Hai -->
-            <a-marker
-                id="second-animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-image_2023_12_13T06_16_15_147Z.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerB"
-            >
-            <a-entity
-                id="second-bowser-model"
-                scale="0.23778764027361926 0.23778764027361926 0.23778764027361926"
-                animation-mixer="loop: repeat"
-                gltf-model="#animated-asset-2"
-                class="clickable"
-                gesture-handler
-            ></a-entity>
-
-            <a-text
-                value="King"
-                position="0 0.5 0"
-                color="#FFFFFF"
-                scale="1.5 1.5 1.5"
-            ></a-text>
+                <a-entity
+                    id="bowser-model"
+                    scale="0.002078034258399037 0.002078034258399037 0.002078034258399037"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
