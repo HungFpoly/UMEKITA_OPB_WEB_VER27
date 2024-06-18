@@ -21,7 +21,7 @@
             <a-assets>
                 <a-asset-item
                     id="animated-asset"
-                    src="assets/asset.glb"
+                    src="assets/Object.fbx"
                 ></a-asset-item>
             </a-assets>
 
@@ -35,20 +35,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <!-- <a-entity
+                <a-entity
                     id="bowser-model"
                     scale="0.002078034258399037 0.002078034258399037 0.002078034258399037"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
-                ></a-entity> -->
-                <!-- Adding the text element -->
-                <a-text
-                    value="hello"
-                    color="red"
-                    scale="2 2 2"
-                ></a-text>
+                ></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
